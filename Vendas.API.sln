@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vendas.API", "Vendas.API\Vendas.API.csproj", "{FB1E15B3-8281-471A-83BA-AE879FBEB181}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontVendas", "FrontVendas\FrontVendas.csproj", "{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB1E15B3-8281-471A-83BA-AE879FBEB181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1E15B3-8281-471A-83BA-AE879FBEB181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1E15B3-8281-471A-83BA-AE879FBEB181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1E15B3-8281-471A-83BA-AE879FBEB181}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D1F5D04-6488-470F-B45C-977BB176B3EE}
+	EndGlobalSection
+EndGlobal
