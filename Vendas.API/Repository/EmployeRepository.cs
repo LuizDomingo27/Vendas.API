@@ -7,7 +7,6 @@ namespace Vendas.API.Repository;
 
 public class EmployeRepository : IEmployeRepository
 {
-	//Criamos a injeção de dependência para usarmos a class SaleContext
 	private readonly EmployesContext _context;
 
 	public EmployeRepository(EmployesContext context) => _context = context;
@@ -17,9 +16,9 @@ public class EmployeRepository : IEmployeRepository
 		return await _context.Employes.ToListAsync();
 	}
 
-	public async Task<List<Employes>> GetSalesHigherThen()
+	public async Task<List<Employes>> GetSalesHigherThen(int valueOne, int valueTwo)
 	{
-		return await _context.Employes.Where(v => v.Salario > 2250 && v.Salario < 8000).ToListAsync();
+		return await _context.Employes.Where(v => v.Salario > valueOne && v.Salario < valueTwo).ToListAsync();
 	}
 
 	public async Task<List<Employes>> GetCargo(string cargo)

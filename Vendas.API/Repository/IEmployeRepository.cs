@@ -10,5 +10,5 @@ public interface IEmployeRepository
 	//Retornar sales com criterios
 	Task<List<Employes>> GetCargo(string cargo);
 
-	Task<List<Employes>> GetSalesHigherThen();
+	Task<List<Employes>> GetSalesHigherThen(int valueOne, int valueTwo);
 }
