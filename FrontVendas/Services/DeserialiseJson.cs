@@ -2,8 +2,6 @@
 
 using RestSharp;
 
-using Vendas.API.Model;
-
 namespace FrontVendas.Services;
 
 public class DeserialiseJson

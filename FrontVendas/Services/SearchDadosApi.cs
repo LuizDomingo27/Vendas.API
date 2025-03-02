@@ -1,10 +1,11 @@
 ﻿using Vendas.API.Model;
+using Vendas.API.Repository;
 
 namespace FrontVendas.Services;
 
 public class SearchDadosApi
 {
-	private readonly string urlBaseApi = "https://localhost:7237/Sales";
+	private readonly string urlBaseApi = UrlBaseApi.UrlBase;
 	public SearchDadosApi() { }
 
 	public async Task<List<Employes>?> GetAllEmployAsync()
@@ -25,7 +26,6 @@ public class SearchDadosApi
 		*/
 	}
 
-	//Buscando os colaboradores por cargo
 	public async Task<List<Employes>?> GetEmployAsyncCargo(string cargo)
 	{
 		List<Employes> lista = [];
@@ -42,4 +42,11 @@ public class SearchDadosApi
 			else { return null; }
 		*/
 	}
+
+	public async Task<List<Employes>?> GetEmployesSalary(int valueOne, int valueTwo)
+	{
+		List<Employes> lista = [];
+		return await DeserialiseJson.GetT(lista, $"{urlBaseApi}/{valueOne}/{valueTwo}");
+	}
+
 }
