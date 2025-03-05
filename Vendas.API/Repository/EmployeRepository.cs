@@ -23,6 +23,11 @@ public class EmployeRepository : IEmployeRepository
 
 	public async Task<List<Employes>> GetCargo(string cargo)
 	{
-		return await _context.Employes.Where(c => c.Cargo!.Equals(cargo)).ToListAsync();
+		return await _context.Employes.Where(c => c.Cargo!.StartsWith(cargo)).ToListAsync();
+	}
+
+	public async Task<List<Employes>> GetSalesByState(string state)
+	{
+		return await _context.Employes.Where(s => s.Estado!.Equals(state.Trim())).ToListAsync();
 	}
 }

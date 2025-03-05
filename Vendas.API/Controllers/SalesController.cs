@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 using Vendas.API.Model;
 using Vendas.API.Repository;
 
 namespace Vendas.API.Controllers;
 
+[Authorize]
 [Route("[controller]")]
 [ApiController]
 public class SalesController : Controller
@@ -13,18 +15,6 @@ public class SalesController : Controller
 	public SalesController(IEmployeRepository employeRepository)
 	{
 		_employeRepository = employeRepository;
-	}
-
-	[HttpGet("{cargo}")]
-	[ProducesResponseType(typeof(Employes), StatusCodes.Status404NotFound)]
-	[ProducesResponseType(typeof(Employes), StatusCodes.Status200OK)]
-	public async Task<ActionResult<List<Employes>>> GetPorCargo(string cargo)
-	{
-		var employesCargo = await _employeRepository.GetCargo(cargo);
-
-		if (employesCargo.Count == 0)
-			return NotFound();
-		else return employesCargo;
 	}
 
 	[HttpGet("{valueOne}/{valueTwo}")]
@@ -39,5 +29,12 @@ public class SalesController : Controller
 	{
 		var employes = await _employeRepository.GetAllSales();
 		return employes;
+	}
+
+	[HttpGet("{Estado:alpha}")]
+	public async Task<ActionResult<List<Employes>>> GetEstate(string Estado)
+	{
+		var emp = await _employeRepository.GetSalesByState(Estado);
+		return emp;
 	}
 }

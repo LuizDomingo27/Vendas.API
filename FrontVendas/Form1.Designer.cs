@@ -38,6 +38,9 @@ partial class FrmMain
 		label1 = new Label();
 		label2 = new Label();
 		label3 = new Label();
+		Cbb_Estado = new ComboBox();
+		label4 = new Label();
+		Btn_Estado = new Button();
 		((System.ComponentModel.ISupportInitialize)dgv_dados).BeginInit();
 		SuspendLayout();
 		// 
@@ -51,21 +54,21 @@ partial class FrmMain
 		dgv_dados.BorderStyle = BorderStyle.Fixed3D;
 		dgv_dados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
 		dgv_dados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-		dgv_dados.Location = new Point(12, 12);
+		dgv_dados.Location = new Point(3, 5);
 		dgv_dados.Name = "dgv_dados";
 		dgv_dados.ReadOnly = true;
 		dgv_dados.RowHeadersVisible = false;
 		dgv_dados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 		dgv_dados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-		dgv_dados.Size = new Size(1056, 404);
+		dgv_dados.Size = new Size(1040, 404);
 		dgv_dados.TabIndex = 0;
 		// 
 		// btnOne
 		// 
 		btnOne.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-		btnOne.Location = new Point(969, 474);
+		btnOne.Location = new Point(1049, 7);
 		btnOne.Name = "btnOne";
-		btnOne.Size = new Size(99, 41);
+		btnOne.Size = new Size(110, 41);
 		btnOne.TabIndex = 1;
 		btnOne.Text = "Search All";
 		btnOne.UseVisualStyleBackColor = true;
@@ -74,9 +77,9 @@ partial class FrmMain
 		// Btn_Cargo
 		// 
 		Btn_Cargo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-		Btn_Cargo.Location = new Point(861, 474);
+		Btn_Cargo.Location = new Point(1049, 54);
 		Btn_Cargo.Name = "Btn_Cargo";
-		Btn_Cargo.Size = new Size(102, 41);
+		Btn_Cargo.Size = new Size(110, 41);
 		Btn_Cargo.TabIndex = 2;
 		Btn_Cargo.Text = "Search Cargo";
 		Btn_Cargo.UseVisualStyleBackColor = true;
@@ -105,7 +108,7 @@ partial class FrmMain
 		// Btn_Values
 		// 
 		Btn_Values.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-		Btn_Values.Location = new Point(745, 474);
+		Btn_Values.Location = new Point(1049, 101);
 		Btn_Values.Name = "Btn_Values";
 		Btn_Values.Size = new Size(110, 41);
 		Btn_Values.TabIndex = 5;
@@ -159,11 +162,47 @@ partial class FrmMain
 		label3.TabIndex = 7;
 		label3.Text = "Selecione o Cargo";
 		// 
+		// Cbb_Estado
+		// 
+		Cbb_Estado.DropDownStyle = ComboBoxStyle.DropDownList;
+		Cbb_Estado.FlatStyle = FlatStyle.System;
+		Cbb_Estado.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+		Cbb_Estado.FormattingEnabled = true;
+		Cbb_Estado.ItemHeight = 20;
+		Cbb_Estado.Location = new Point(345, 489);
+		Cbb_Estado.Name = "Cbb_Estado";
+		Cbb_Estado.Size = new Size(121, 28);
+		Cbb_Estado.TabIndex = 8;
+		// 
+		// label4
+		// 
+		label4.AutoSize = true;
+		label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+		label4.Location = new Point(345, 469);
+		label4.Name = "label4";
+		label4.Size = new Size(106, 15);
+		label4.TabIndex = 7;
+		label4.Text = "Selecione o Estado";
+		// 
+		// Btn_Estado
+		// 
+		Btn_Estado.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+		Btn_Estado.Location = new Point(1049, 148);
+		Btn_Estado.Name = "Btn_Estado";
+		Btn_Estado.Size = new Size(110, 41);
+		Btn_Estado.TabIndex = 9;
+		Btn_Estado.Text = "Search Estado";
+		Btn_Estado.UseVisualStyleBackColor = true;
+		Btn_Estado.Click += Btn_Estado_Click;
+		// 
 		// FrmMain
 		// 
 		AutoScaleDimensions = new SizeF(7F, 15F);
 		AutoScaleMode = AutoScaleMode.Font;
-		ClientSize = new Size(1080, 521);
+		ClientSize = new Size(1163, 521);
+		Controls.Add(Btn_Estado);
+		Controls.Add(Cbb_Estado);
+		Controls.Add(label4);
 		Controls.Add(label3);
 		Controls.Add(label2);
 		Controls.Add(label1);
@@ -195,4 +234,7 @@ partial class FrmMain
 	private Label label1;
 	private Label label2;
 	private Label label3;
+	private ComboBox Cbb_Estado;
+	private Label label4;
+	private Button Btn_Estado;
 }

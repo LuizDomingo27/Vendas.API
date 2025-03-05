@@ -5,13 +5,13 @@ namespace FrontVendas.Services;
 
 public class SearchDadosApi
 {
-	private readonly string urlBaseApi = UrlBaseApi.UrlBase;
+	private readonly string urlBaseApi = UrlBaseApi.UrlBaseSales;
 	public SearchDadosApi() { }
 
 	public async Task<List<Employes>?> GetAllEmployAsync()
 	{
 		List<Employes> lista = [];
-		return await DeserialiseJson.GetT(lista, urlBaseApi);
+		return await DeserialiseJson.GetT(lista, urlBaseApi + "Sales");
 
 		/*
 			var cliente = new RestClient();
@@ -29,7 +29,7 @@ public class SearchDadosApi
 	public async Task<List<Employes>?> GetEmployAsyncCargo(string cargo)
 	{
 		List<Employes> lista = [];
-		return await DeserialiseJson.GetT(lista, $"{urlBaseApi}/{cargo}");
+		return await DeserialiseJson.GetT(lista, $"{urlBaseApi}Cargos/{cargo}");
 		/*
 			var cliente = new RestClient();
 			var request = new RestRequest($"{urlBaseApi}/{cargo}", Method.Get);
@@ -46,7 +46,12 @@ public class SearchDadosApi
 	public async Task<List<Employes>?> GetEmployesSalary(int valueOne, int valueTwo)
 	{
 		List<Employes> lista = [];
-		return await DeserialiseJson.GetT(lista, $"{urlBaseApi}/{valueOne}/{valueTwo}");
+		return await DeserialiseJson.GetT(lista, $"{urlBaseApi}Sales/{valueOne}/{valueTwo}");
 	}
 
+	public async Task<List<Employes>?> GetEmployesState(string estado)
+	{
+		List<Employes> lista = [];
+		return await DeserialiseJson.GetT(lista, $"{urlBaseApi}Sales/{estado}");
+	}
 }
