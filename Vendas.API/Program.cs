@@ -20,9 +20,9 @@ public class Program
 		#endregion
 
 		#region Adicionamos a injeção de dependência - configurando
-		
+
 		builder.Services.AddDependecyInjection(builder.Configuration);
-		
+
 		#endregion
 
 		var app = builder.Build();
@@ -39,6 +39,7 @@ public class Program
 		#endregion
 
 		app.UseHttpsRedirection();
+		app.UseAuthorization();
 		app.UseAuthorization();
 		app.MapControllers();
 

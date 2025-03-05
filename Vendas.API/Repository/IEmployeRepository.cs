@@ -11,4 +11,6 @@ public interface IEmployeRepository
 	Task<List<Employes>> GetCargo(string cargo);
 
 	Task<List<Employes>> GetSalesHigherThen(int valueOne, int valueTwo);
+
+	Task<List<Employes>> GetSalesByState(string state);
 }

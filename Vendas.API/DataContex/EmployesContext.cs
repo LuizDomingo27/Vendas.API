@@ -14,15 +14,17 @@ public class EmployesContext : DbContext
 
 	//Criamos o nosso DbSet<>
 	public DbSet<Employes> Employes { get; set; }
+	public DbSet<RegisterUsers> RegisterUsers { get; set; }
 
 	//Sobrescrevemos o metodo OmodelCreating()
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		//Aqui estou afirmando para não ter chave primaria
 		modelBuilder.Entity<Employes>(e => e.HasNoKey());
-		
+
 		//Para criar as tabelas em nosso banco de dados precisamos adicionar o mapeamento
 		modelBuilder.ApplyConfiguration(new EmployesMap());
+		modelBuilder.ApplyConfiguration(new RegisterUserMap());
 
 		//Criando as configurações
 		base.OnModelCreating(modelBuilder);
