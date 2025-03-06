@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using Vendas.API.DataContex;
+using Vendas.API.Domain;
+using Vendas.API.Interface;
 using Vendas.API.Model;
 
 namespace Vendas.API.Repository;
@@ -9,19 +11,32 @@ public class UserRepository : IUserRepository
 {
 	private readonly EmployesContext _context;
 	private readonly IEncryptyPassword _encryptyPassword;
-	public UserRepository(EmployesContext context, IEncryptyPassword encrypty)
+	private readonly IGeneratorToken _token;
+	public UserRepository(EmployesContext context, IEncryptyPassword encrypty, IGeneratorToken token)
 	{
 		_encryptyPassword = encrypty;
 		_context = context;
+		_token = token;
 	}
 
-	public async Task<RegisterUsers> AddUser(RegisterUsers user)
+	public async Task<ResponseUserRegister> AddUser(RequesteRegisterUser request)
 	{
-		user.Password = _encryptyPassword.Encrypty(user.Password);
-		user.ConfirmPassword = user.Password;
-		await _context.AddAsync(user);
-		_context.SaveChanges();
-		return user;
+		var user = new RegisterUsers
+		{
+			Email = request.Email!,
+			Password = _encryptyPassword.Encrypty(request.Password!),
+			ConfirmPassword = _encryptyPassword.Encrypty(request.ConfirmPassword!)
+		};
+
+		await _context.RegisterUsers.AddAsync(user);
+		await _context.SaveChangesAsync();
+
+		return new ResponseUserRegister
+		{
+			Email = user.Email,
+			Token = _token.GenerateToken(user.UserIdentifier),
+			UserIdentifier = user.UserIdentifier
+		};
 	}
 
 	public async Task<bool> Login(LoginUser user)

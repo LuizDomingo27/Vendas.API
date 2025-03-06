@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+using Vendas.API.Interface;
 using Vendas.API.Model;
-using Vendas.API.Repository;
 
 namespace Vendas.API.Controllers
 {
-	[Authorize]
 	[Route("[controller]")]
 	[ApiController]
 	public class CargosController : ControllerBase

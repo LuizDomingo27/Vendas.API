@@ -21,6 +21,7 @@ public class EmployesContext : DbContext
 	{
 		//Aqui estou afirmando para não ter chave primaria
 		modelBuilder.Entity<Employes>(e => e.HasNoKey());
+		modelBuilder.Entity<RegisterUsers>(e => e.HasNoKey());
 
 		//Para criar as tabelas em nosso banco de dados precisamos adicionar o mapeamento
 		modelBuilder.ApplyConfiguration(new EmployesMap());

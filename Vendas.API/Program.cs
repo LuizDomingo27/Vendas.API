@@ -1,7 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-
-using Vendas.API.DataContex;
-using Vendas.API.Repository;
+using Vendas.API.DependencyInjection;
 
 namespace Vendas.API;
 
