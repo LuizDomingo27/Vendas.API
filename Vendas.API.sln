@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vendas.API", "Vendas.API\Vendas.API.csproj", "{FB1E15B3-8281-471A-83BA-AE879FBEB181}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontVendas", "FrontVendas\FrontVendas.csproj", "{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GunaModel", "GunaModel\GunaModel.csproj", "{1508C119-E7B1-4FC3-9138-C5B73078E639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
