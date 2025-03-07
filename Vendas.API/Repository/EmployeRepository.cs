@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using Vendas.API.DataContex;
+using Vendas.API.Interface;
 using Vendas.API.Model;
 
 namespace Vendas.API.Repository;

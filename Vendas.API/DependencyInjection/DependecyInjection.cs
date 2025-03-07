@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+using Vendas.API.Criptographia;
 using Vendas.API.DataContex;
 using Vendas.API.Domain;
 using Vendas.API.Infra;
+using Vendas.API.Interface;
+using Vendas.API.Repository;
 
-namespace Vendas.API.Repository;
+namespace Vendas.API.DependencyInjection;
 
 public static class DependecyInjection
 {
@@ -30,8 +33,8 @@ public static class DependecyInjection
 
 	public static void AddJwtTokens(IServiceCollection services, IConfiguration config)
 	{
-		var expirtationTimeOrDate = config.GetValue<uint>("Jwt");
-		var secretKey = config.GetValue<string>("SecretKey");
+		var expirtationTimeOrDate = config.GetValue<uint>("Settings:Jwt:ExpirationTime");
+		var secretKey = config.GetValue<string>("Settings:Jwt:SigningKey");
 		services.AddScoped<IGeneratorToken>
 			(
 				option => new JwtTokenGenerator(expirtationTimeOrDate, secretKey)

@@ -1,4 +1,6 @@
-﻿namespace Vendas.API.Repository;
+﻿using Vendas.API.Repository;
+
+namespace Vendas.API.Criptographia;
 
 public class EncryptyPasword : IEncryptyPassword
 {

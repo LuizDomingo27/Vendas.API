@@ -11,6 +11,7 @@ public class RegisterUserMap : IEntityTypeConfiguration<RegisterUsers>
 	{
 		builder.ToTable("RegisterUsers");
 		builder.HasKey(p => p.Id);
+		builder.Property(p => p.UserIdentifier).IsRequired();
 		builder.Property(p => p.Email).HasMaxLength(150).IsRequired();
 		builder.Property(p => p.Password).HasMaxLength(2000).IsRequired();
 	}

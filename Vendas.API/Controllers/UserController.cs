@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
+using Vendas.API.Interface;
 using Vendas.API.Model;
-using Vendas.API.Repository;
 
 namespace Vendas.API.Controllers;
 
@@ -21,10 +21,10 @@ public class UserController : ControllerBase
 	}
 
 	[HttpPost("register")]
-	public async Task<ActionResult<RegisterUsers>> RegisterUser([FromBody] RegisterUsers user,
-		[FromServices] IUserRepository register)
+	[ProducesResponseType(typeof(ResponseUserRegister), StatusCodes.Status201Created)]
+	public async Task<IActionResult> RegisterUser([FromServices] IUserRepository register, [FromBody] RequesteRegisterUser user)
 	{
 		var model = await register.AddUser(user);
-		return model;
+		return Created(string.Empty, model);
 	}
 }
