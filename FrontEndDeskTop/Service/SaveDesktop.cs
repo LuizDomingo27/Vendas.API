@@ -19,16 +19,18 @@ namespace FrontEndDeskTop.Service
 				MessageBox.Show("Preencha todos os campos corretamente\n Verifique se a senha são iguais.");
 				return;
 			}
+
 			bool emailValid = await _verificarEmailDesk.Verificar(email);
+
 			if (emailValid)
 			{
 				MessageBox.Show("Email já cadastrado");
 				return;
 			}
-			var user = new UsersDesk
+			var user = new RequesteRegisterUser
 			{
 				Email = email,
-				Passowrd = password,
+				Password = password,
 				ConfirmPassword = confirmPass
 			};
 

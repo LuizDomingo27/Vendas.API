@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\EmployesDesk.cs" />
+    <Compile Include="Model\RequesteRegisterUser.cs" />
     <Compile Include="Model\UsersDesk.cs" />
     <Compile Include="Service\JsonDeserializerDeskTop.cs" />
     <Compile Include="Service\JsonSerializerDeskTop.cs" />

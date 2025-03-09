@@ -8,7 +8,7 @@ namespace FrontVendas.Services;
 
 public class JsonSerializer
 {
-	private readonly HttpClient _client = new HttpClient();
+	private readonly HttpClient _client = new();
 	private readonly string _urlBaseApi = UrlBaseApi.UrlBaseSales;
 
 	public async Task SerializeObject<T>(T obj)
