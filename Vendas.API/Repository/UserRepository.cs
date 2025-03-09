@@ -12,6 +12,7 @@ public class UserRepository : IUserRepository
 	private readonly EmployesContext _context;
 	private readonly IEncryptyPassword _encryptyPassword;
 	private readonly IGeneratorToken _token;
+
 	public UserRepository(EmployesContext context, IEncryptyPassword encrypty, IGeneratorToken token)
 	{
 		_encryptyPassword = encrypty;
@@ -51,5 +52,10 @@ public class UserRepository : IUserRepository
 		{
 			return false;
 		}
+	}
+
+	public async Task<List<RegisterUsers>> GetUsers()
+	{
+		return await _context.RegisterUsers.ToListAsync();
 	}
 }

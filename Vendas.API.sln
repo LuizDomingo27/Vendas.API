@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vendas.API", "Vendas.API\Ve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontVendas", "FrontVendas\FrontVendas.csproj", "{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GunaModel", "GunaModel\GunaModel.csproj", "{1508C119-E7B1-4FC3-9138-C5B73078E639}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEndDeskTop", "FrontEndDeskTop\FrontEndDeskTop.csproj", "{6F972B23-7849-4DC8-B70C-EAD9187EB33F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1508C119-E7B1-4FC3-9138-C5B73078E639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F972B23-7849-4DC8-B70C-EAD9187EB33F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F972B23-7849-4DC8-B70C-EAD9187EB33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F972B23-7849-4DC8-B70C-EAD9187EB33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F972B23-7849-4DC8-B70C-EAD9187EB33F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

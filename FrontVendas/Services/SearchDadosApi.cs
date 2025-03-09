@@ -54,4 +54,10 @@ public class SearchDadosApi
 		List<Employes> lista = [];
 		return await DeserialiseJson.GetT(lista, $"{_urlBaseApi}Sales/{estado}");
 	}
+
+	public async Task<List<RegisterUsers>?> GetUsers()
+	{
+		List<RegisterUsers> lista = [];
+		return await DeserialiseJson.GetT(lista, $"{_urlBaseApi}User");
+	}
 }

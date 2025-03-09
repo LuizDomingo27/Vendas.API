@@ -8,4 +8,6 @@ public interface IUserRepository
 
 	public Task<bool> Login(LoginUser user);
 
+	public Task<List<RegisterUsers>> GetUsers();
+
 }

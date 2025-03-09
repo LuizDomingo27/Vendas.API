@@ -22,9 +22,17 @@ public class UserController : ControllerBase
 
 	[HttpPost("register")]
 	[ProducesResponseType(typeof(ResponseUserRegister), StatusCodes.Status201Created)]
-	public async Task<IActionResult> RegisterUser([FromServices] IUserRepository register, [FromBody] RequesteRegisterUser user)
+	public async Task<ActionResult> RegisterUser([FromServices] IUserRepository register, [FromBody] RequesteRegisterUser user)
 	{
 		var model = await register.AddUser(user);
 		return Created(string.Empty, model);
+	}
+
+	[HttpGet]
+	[ProducesResponseType(typeof(List<RegisterUsers>), StatusCodes.Status200OK)]
+	public async Task<ActionResult<List<RegisterUsers>>> GetUsers([FromServices] IUserRepository user)
+	{
+		var result = await user.GetUsers();
+		return result;
 	}
 }
