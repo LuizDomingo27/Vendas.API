@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 using FrontEndDeskTop.Model;
@@ -13,6 +14,20 @@ namespace FrontEndDeskTop.Views
 			InitializeComponent();
 		}
 
+		public void LimparCampos()
+		{
+			TxtEmailUser.ResetText();
+			TxtConfirmPass.ResetText();
+			TxtPassUser.ResetText();
+		}
+
+		private void BntLogin_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			Thread thread = new Thread(() => Application.Run(new Frm_Login()));
+			thread.Start();
+		}
+
 		private async void BtnSalvarUser_Click(object sender, EventArgs e)
 		{
 			string email = TxtEmailUser.Text;
@@ -22,13 +37,6 @@ namespace FrontEndDeskTop.Views
 			SaveDesktop save = new SaveDesktop();
 			await save.Save(email, password, confirmPass);
 			LimparCampos();
-		}
-
-		public void LimparCampos()
-		{
-			TxtEmailUser.ResetText();
-			TxtConfirmPass.ResetText();
-			TxtPassUser.ResetText();
 		}
 	}
 }

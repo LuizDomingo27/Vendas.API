@@ -40,6 +40,11 @@ public class UserRepository : IUserRepository
 		};
 	}
 
+	public async Task<List<RegisterUsers>> GetUsers()
+	{
+		return await _context.RegisterUsers.ToListAsync();
+	}
+
 	public async Task<bool> Login(LoginUser user)
 	{
 		List<RegisterUsers> use = await _context.RegisterUsers.ToListAsync();
@@ -52,10 +57,5 @@ public class UserRepository : IUserRepository
 		{
 			return false;
 		}
-	}
-
-	public async Task<List<RegisterUsers>> GetUsers()
-	{
-		return await _context.RegisterUsers.ToListAsync();
 	}
 }

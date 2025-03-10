@@ -27,6 +27,7 @@ namespace FrontEndDeskTop.Service
 				MessageBox.Show("Email já cadastrado");
 				return;
 			}
+
 			var user = new RequesteRegisterUser
 			{
 				Email = email,
