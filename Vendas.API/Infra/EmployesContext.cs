@@ -3,7 +3,7 @@
 using Vendas.API.Map;
 using Vendas.API.Model;
 
-namespace Vendas.API.DataContex;
+namespace Vendas.API.Infra;
 
 public class EmployesContext : DbContext
 {

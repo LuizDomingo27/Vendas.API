@@ -50,7 +50,7 @@ namespace FrontEndDeskTop.Service
 			List<EmployesDesk> lista = new List<EmployesDesk>();
 			return await JsonDeserializerDeskTop.GetDeserialize(lista, $"{_urlBaseApi}Sales/{valueOne}/{valueTwo}");
 		}
-		
+
 		public async Task<List<EmployesDesk>> GetEmployesState(string estado)
 		{
 			List<EmployesDesk> lista = new List<EmployesDesk>();

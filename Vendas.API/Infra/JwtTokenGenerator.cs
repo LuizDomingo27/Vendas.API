@@ -1,11 +1,10 @@
-﻿
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 using Microsoft.IdentityModel.Tokens;
 
-using Vendas.API.Domain;
+using Vendas.API.Interface;
 
 namespace Vendas.API.Infra;
 

@@ -24,9 +24,9 @@ public class UserController : ControllerBase
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	[ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
 	[ProducesDefaultResponseType]
-	public async Task<ActionResult> LoginUser([FromServices] IUserRepository iuser, [FromBody] LoginUser user)
+	public async Task<ActionResult> LoginUser([FromServices] IUserRepository Iuser, [FromBody] LoginUser user)
 	{
-		bool userLogd = await iuser.Login(user);
+		bool userLogd = await Iuser.Login(user);
 		return userLogd ? Ok("Usuário logado com sucesso") : BadRequest("Usuário ou senha inválidos");
 	}
 

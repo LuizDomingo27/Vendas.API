@@ -85,15 +85,15 @@
 			// 
 			this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.guna2ControlBox1.BorderRadius = 10;
-			this.guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom;
 			this.guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.guna2ControlBox1.FillColor = System.Drawing.Color.IndianRed;
+			this.guna2ControlBox1.CustomIconSize = 12F;
+			this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
 			this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-			this.guna2ControlBox1.IconColor = System.Drawing.Color.IndianRed;
-			this.guna2ControlBox1.Location = new System.Drawing.Point(445, -1);
+			this.guna2ControlBox1.IconColor = System.Drawing.Color.LightGray;
+			this.guna2ControlBox1.Location = new System.Drawing.Point(436, -1);
 			this.guna2ControlBox1.Name = "guna2ControlBox1";
 			this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-			this.guna2ControlBox1.Size = new System.Drawing.Size(24, 21);
+			this.guna2ControlBox1.Size = new System.Drawing.Size(31, 24);
 			this.guna2ControlBox1.TabIndex = 2;
 			// 
 			// TxtPassUser

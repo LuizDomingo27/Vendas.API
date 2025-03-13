@@ -23,7 +23,7 @@ namespace FrontEndDeskTop
 			{
 				ProgresMain.Value = i;
 				ProgresMain.Refresh();
-				await Task.Delay(100);
+				await Task.Delay(50);
 				if (i == 100)
 				{
 					this.Close();

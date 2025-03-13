@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontVendas", "FrontVendas\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEndDeskTop", "FrontEndDeskTop\FrontEndDeskTop.csproj", "{6F972B23-7849-4DC8-B70C-EAD9187EB33F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEnd", "BackEnd", "{AF7D1799-6FE8-484F-8166-DC5CBE82BC3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +34,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB1E15B3-8281-471A-83BA-AE879FBEB181} = {AF7D1799-6FE8-484F-8166-DC5CBE82BC3A}
+		{D91D1687-59FC-4A88-9DEB-35C3FDDDD9B6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6F972B23-7849-4DC8-B70C-EAD9187EB33F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D1F5D04-6488-470F-B45C-977BB176B3EE}

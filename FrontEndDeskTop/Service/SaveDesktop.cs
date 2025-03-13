@@ -11,7 +11,6 @@ namespace FrontEndDeskTop.Service
 		public SaveDesktop()
 		{
 		}
-
 		public async Task Save(string email, string password, string confirmPass)
 		{
 			if (email == string.Empty || password == string.Empty || password != confirmPass)
@@ -35,10 +34,8 @@ namespace FrontEndDeskTop.Service
 				ConfirmPassword = confirmPass
 			};
 
-			JsonSerializerDeskTop json = new JsonSerializerDeskTop();
-			await json.SerializeObject(user);
+			await JsonSerializerDeskTop.SerializeObject(user);
 			MessageBox.Show("Usuário cadastrado com sucesso");
 		}
-
 	}
 }

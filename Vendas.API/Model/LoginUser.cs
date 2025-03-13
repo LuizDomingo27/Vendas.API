@@ -1,6 +1,7 @@
 ﻿namespace Vendas.API.Model;
 
-public class LoginUser : RegisterUsers
+public class LoginUser
 {
-	
+	public string? Email { get; set; }
+	public string? Password { get; set; }
 }

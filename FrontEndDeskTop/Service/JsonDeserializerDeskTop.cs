@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FrontEndDeskTop.Service
 {
-	class JsonDeserializerDeskTop
+	public class JsonDeserializerDeskTop
 	{
 		public static async Task<T> GetDeserialize<T>(T obj, string url = null)
 		{

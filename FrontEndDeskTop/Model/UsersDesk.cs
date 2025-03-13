@@ -2,12 +2,9 @@
 
 namespace FrontEndDeskTop.Model
 {
-	class UsersDesk
+	public class UsersDesk : RequesteRegisterUser
 	{
-		//public int Id { get; set; }
-		//public Guid UserIdentifier { get; set; } = Guid.NewGuid();
-		public string Email { get; set; }
-		public string Passowrd { get; set; }
-		public string ConfirmPassword { get; set; }
+		public int Id { get; set; }
+		public Guid UserIdentifier { get; set; }
 	}
 }

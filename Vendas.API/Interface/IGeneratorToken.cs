@@ -1,4 +1,4 @@
-﻿namespace Vendas.API.Domain;
+﻿namespace Vendas.API.Interface;
 
 public interface IGeneratorToken
 {
