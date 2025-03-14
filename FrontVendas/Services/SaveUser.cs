@@ -1,17 +1,13 @@
-﻿using Vendas.API.Interface;
-using Vendas.API.Model;
-using Vendas.API.Repository;
+﻿using Vendas.API.Model;
 
 namespace FrontVendas.Services;
 
 public class SaveUser
 {
 	private readonly VerificarEmail _verificarEmail = new();
-	
-	public SaveUser()
-	{
-	}
-	
+
+	public SaveUser() { }
+
 	public async Task Save(string email, string password, string confirmPass)
 	{
 		if (email == string.Empty || password == string.Empty || password != confirmPass)
@@ -34,6 +30,7 @@ public class SaveUser
 			Password = password,
 			ConfirmPassword = confirmPass
 		};
+
 		JsonSerializer json = new();
 		await json.SerializeObject(user);
 		MessageBox.Show("Usuário cadastrado com sucesso");

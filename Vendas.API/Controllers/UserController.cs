@@ -20,20 +20,19 @@ public class UserController : ControllerBase
 	#endregion
 
 	#region Login User
+
 	[HttpPost("login")]
-	[ProducesResponseType(StatusCodes.Status200OK)]
-	[ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
-	[ProducesDefaultResponseType]
-	public async Task<ActionResult> LoginUser([FromServices] IUserRepository Iuser, [FromBody] LoginUser user)
+	[ProducesResponseType(typeof(ResponseUserRegister), StatusCodes.Status200OK)]
+	public async Task<ActionResult<bool>> LoginUser([FromServices] IUserRepository Iuser, [FromBody] LoginUser user)
 	{
 		bool userLogd = await Iuser.Login(user);
-		return userLogd ? Ok("Usuário logado com sucesso") : BadRequest("Usuário ou senha inválidos");
+		return userLogd;
 	}
 
 	#endregion
 
 	#region Register User
-	[HttpPost("register")]
+	[HttpPost]
 	[ProducesResponseType(typeof(ResponseUserRegister), StatusCodes.Status201Created)]
 	public async Task<ActionResult> RegisterUser([FromServices] IUserRepository register, [FromBody] RequesteRegisterUser user)
 	{

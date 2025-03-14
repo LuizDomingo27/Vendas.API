@@ -15,7 +15,7 @@ namespace FrontEndDeskTop.Service
 		{
 			var json = JsonConvert.SerializeObject(obj);
 			var contente = new StringContent(json, Encoding.UTF8, "application/json");
-			var response = await _client.PostAsync($"{_urlBaseApi}User/register", contente);
+			var response = await _client.PostAsync($"{_urlBaseApi}User", contente);
 			response.EnsureSuccessStatusCode();
 		}
 
@@ -27,13 +27,9 @@ namespace FrontEndDeskTop.Service
 			response.EnsureSuccessStatusCode();
 
 			if (response.IsSuccessStatusCode)
-			{
 				return true;
-			}
 			else
-			{
 				return false;
-			}
 		}
 	}
 }

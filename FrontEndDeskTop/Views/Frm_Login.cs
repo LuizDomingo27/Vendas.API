@@ -8,7 +8,7 @@ namespace FrontEndDeskTop.Views
 {
 	public partial class Frm_Login : Form
 	{
-		private DoLogin _login;
+		private readonly DoLogin _login;
 
 		public Frm_Login()
 		{

@@ -11,7 +11,7 @@ namespace FrontEndDeskTop
 		public FrmMain1()
 		{
 			InitializeComponent();
-			CaregarProges();
+			_ = CaregarProges();
 		}
 
 		private async Task CaregarProges()

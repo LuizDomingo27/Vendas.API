@@ -8,9 +8,11 @@ namespace Vendas.API.Repository;
 
 public class UserRepository : IUserRepository
 {
+	#region Variables
 	private readonly EmployesContext _context;
 	private readonly IEncryptyPassword _encryptyPassword;
 	private readonly IGeneratorToken _token;
+	#endregion
 
 	public UserRepository(EmployesContext context, IEncryptyPassword encrypty, IGeneratorToken token)
 	{
@@ -51,12 +53,8 @@ public class UserRepository : IUserRepository
 		List<RegisterUsers> use = await _context.RegisterUsers.ToListAsync();
 
 		if (use.Any(u => u.Email == user.Email && _encryptyPassword.Verify(user.Password!, u.Password)))
-		{
 			return true;
-		}
 		else
-		{
 			return false;
-		}
 	}
 }

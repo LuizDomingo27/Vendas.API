@@ -8,9 +8,8 @@ namespace FrontEndDeskTop.Service
 	public class SaveDesktop
 	{
 		private readonly VerificarEmailDesk _verificarEmailDesk = new VerificarEmailDesk();
-		public SaveDesktop()
-		{
-		}
+		public SaveDesktop() { }
+
 		public async Task Save(string email, string password, string confirmPass)
 		{
 			if (email == string.Empty || password == string.Empty || password != confirmPass)
