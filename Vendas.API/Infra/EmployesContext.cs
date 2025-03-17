@@ -8,15 +8,13 @@ namespace Vendas.API.Infra;
 public class EmployesContext : DbContext
 {
 	//Criamos o construtor
-	public EmployesContext(DbContextOptions<EmployesContext> options) : base(options)
-	{
-	}
+	public EmployesContext(DbContextOptions<EmployesContext> options) : base(options) { }
 
 	//Criamos o nosso DbSet<>
 	public DbSet<Employes> Employes { get; set; }
 	public DbSet<RegisterUsers> RegisterUsers { get; set; }
 
-	//Sobrescrevemos o metodo OmodelCreating()
+	//Sobrescrevemos o metodo OnModelCreating()
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		//Aqui estou afirmando para não ter chave primaria

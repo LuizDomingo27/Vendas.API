@@ -1,5 +1,6 @@
-﻿using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 using FrontEndDeskTop.Model;
 
@@ -11,19 +12,9 @@ namespace FrontEndDeskTop.Service
 
 		public async Task<bool> Login(string email, string password)
 		{
-			if (email == string.Empty || password == string.Empty)
-			{
-				MessageBox.Show("Preencha todos os campos!");
-				return false;
-			}
-
-			LoginUser loginUser = new LoginUser
-			{
-				Email = email,
-				Password = password
-			};
-
-			var res = await JsonSerializerDeskTop.SerializeEmail(loginUser);
+			SearchDadosAPI dadosAPI = new SearchDadosAPI();
+			List<UsersDesk> dados = await dadosAPI.GetUsers();
+			bool res = dados.Any(x => x.Email == email && CryptyPassword.Verify(password, x.Password));
 			return res;
 		}
 	}

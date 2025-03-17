@@ -45,7 +45,7 @@ public class UserRepository : IUserRepository
 
 	public async Task<List<RegisterUsers>> GetUsers()
 	{
-		return await _context.RegisterUsers.ToListAsync();
+		return await _context.RegisterUsers.AsNoTracking().ToListAsync();
 	}
 
 	public async Task<bool> Login(LoginUser user)

@@ -15,12 +15,14 @@ public class SalesController : Controller
 		_employeRepository = employeRepository;
 	}
 
+
 	[HttpGet("{valueOne}/{valueTwo}")]
 	public async Task<ActionResult<List<Employes>>> GetEmployeHigh(int valueOne, int valueTwo)
 	{
 		var employesSalary = await _employeRepository.GetSalesHigherThen(valueOne, valueTwo);
 		return employesSalary;
 	}
+
 
 	[HttpGet]
 	public async Task<ActionResult<List<Employes>>> GetAllEmployes()
@@ -29,10 +31,19 @@ public class SalesController : Controller
 		return employes;
 	}
 
+
 	[HttpGet("{Estado:alpha}")]
 	public async Task<ActionResult<List<Employes>>> GetEstate(string Estado)
 	{
-		var emp = await _employeRepository.GetSalesByState(Estado);
+		List<Employes> emp = await _employeRepository.GetSalesByState(Estado);
+		return emp;
+	}
+
+
+	[HttpGet("{estado}/{cargo}/{valueOne}/{valueTwo}")]
+	public async Task<ActionResult<List<Employes>>> GetAllCriterial(string estado, string cargo, int valueOne, int valueTwo)
+	{
+		List<Employes> emp = await _employeRepository.GetWithVariousCriteriau(estado, cargo, valueOne, valueTwo);
 		return emp;
 	}
 }

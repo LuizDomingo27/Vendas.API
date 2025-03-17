@@ -36,6 +36,9 @@
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.11.11.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\..\Guna\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
@@ -103,6 +106,8 @@
     <Compile Include="Service\SaveDesktop.cs" />
     <Compile Include="Service\SearchDadosAPI.cs" />
     <Compile Include="Service\VerificarEmailDesk.cs" />
+    <Compile Include="Validator\ValidateUser.cs" />
+    <Compile Include="Validator\ValidatorLogin.cs" />
     <Compile Include="Views\FrmCadUser.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -62,5 +62,12 @@ namespace FrontEndDeskTop.Service
 			List<UsersDesk> lista = new List<UsersDesk>();
 			return await JsonDeserializerDeskTop.GetDeserialize(lista, $"{_urlBaseApi}User");
 		}
+
+		public async Task<List<EmployesDesk>> GetAllCriterial(string estado, string cargo, int valueOne, int valueTwho)
+		{
+			List<EmployesDesk> lista = new List<EmployesDesk>();
+			return await JsonDeserializerDeskTop.GetDeserialize(lista,
+				$"{_urlBaseApi}Sales/{estado}/{cargo}/{valueOne}/{valueTwho}");
+		}
 	}
 }

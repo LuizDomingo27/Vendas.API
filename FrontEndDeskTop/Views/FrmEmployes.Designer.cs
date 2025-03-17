@@ -29,11 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.Btn_Position = new Guna.UI2.WinForms.Guna2Button();
 			this.Btn_Estates = new Guna.UI2.WinForms.Guna2Button();
 			this.Btn_Todos = new Guna.UI2.WinForms.Guna2Button();
@@ -45,13 +40,14 @@
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.TxtValoeTwo = new Guna.UI2.WinForms.Guna2TextBox();
 			this.TxtValorOne = new Guna.UI2.WinForms.Guna2TextBox();
-			this.Dgv_Dados = new Guna.UI2.WinForms.Guna2DataGridView();
 			this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.Lbl_totalResult = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.Dgv_Dados)).BeginInit();
+			this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+			this.Btn_AllCriterial = new Guna.UI2.WinForms.Guna2Button();
+			this.List_view = new System.Windows.Forms.ListView();
 			this.SuspendLayout();
 			// 
 			// Btn_Position
@@ -64,10 +60,10 @@
 			this.Btn_Position.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Btn_Position.ForeColor = System.Drawing.Color.White;
 			this.Btn_Position.HoverState.Parent = this.Btn_Position;
-			this.Btn_Position.Location = new System.Drawing.Point(996, 162);
+			this.Btn_Position.Location = new System.Drawing.Point(1001, 162);
 			this.Btn_Position.Name = "Btn_Position";
 			this.Btn_Position.ShadowDecoration.Parent = this.Btn_Position;
-			this.Btn_Position.Size = new System.Drawing.Size(130, 45);
+			this.Btn_Position.Size = new System.Drawing.Size(125, 45);
 			this.Btn_Position.TabIndex = 0;
 			this.Btn_Position.Text = "Search Position";
 			this.Btn_Position.Click += new System.EventHandler(this.Btn_Position_Click);
@@ -82,10 +78,10 @@
 			this.Btn_Estates.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Btn_Estates.ForeColor = System.Drawing.Color.White;
 			this.Btn_Estates.HoverState.Parent = this.Btn_Estates;
-			this.Btn_Estates.Location = new System.Drawing.Point(996, 101);
+			this.Btn_Estates.Location = new System.Drawing.Point(1001, 101);
 			this.Btn_Estates.Name = "Btn_Estates";
 			this.Btn_Estates.ShadowDecoration.Parent = this.Btn_Estates;
-			this.Btn_Estates.Size = new System.Drawing.Size(130, 45);
+			this.Btn_Estates.Size = new System.Drawing.Size(125, 45);
 			this.Btn_Estates.TabIndex = 1;
 			this.Btn_Estates.Text = "Search Statat";
 			this.Btn_Estates.Click += new System.EventHandler(this.Btn_Estates_Click);
@@ -100,10 +96,10 @@
 			this.Btn_Todos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Btn_Todos.ForeColor = System.Drawing.Color.White;
 			this.Btn_Todos.HoverState.Parent = this.Btn_Todos;
-			this.Btn_Todos.Location = new System.Drawing.Point(996, 40);
+			this.Btn_Todos.Location = new System.Drawing.Point(1001, 40);
 			this.Btn_Todos.Name = "Btn_Todos";
 			this.Btn_Todos.ShadowDecoration.Parent = this.Btn_Todos;
-			this.Btn_Todos.Size = new System.Drawing.Size(130, 45);
+			this.Btn_Todos.Size = new System.Drawing.Size(125, 45);
 			this.Btn_Todos.TabIndex = 2;
 			this.Btn_Todos.Text = "Search All";
 			this.Btn_Todos.Click += new System.EventHandler(this.Btn_Todos_Click);
@@ -118,10 +114,10 @@
 			this.Btn_Values.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Btn_Values.ForeColor = System.Drawing.Color.White;
 			this.Btn_Values.HoverState.Parent = this.Btn_Values;
-			this.Btn_Values.Location = new System.Drawing.Point(996, 223);
+			this.Btn_Values.Location = new System.Drawing.Point(1001, 223);
 			this.Btn_Values.Name = "Btn_Values";
 			this.Btn_Values.ShadowDecoration.Parent = this.Btn_Values;
-			this.Btn_Values.Size = new System.Drawing.Size(130, 45);
+			this.Btn_Values.Size = new System.Drawing.Size(125, 45);
 			this.Btn_Values.TabIndex = 3;
 			this.Btn_Values.Text = "Search Values";
 			this.Btn_Values.Click += new System.EventHandler(this.Btn_Values_Click);
@@ -259,93 +255,9 @@
 			this.TxtValorOne.Size = new System.Drawing.Size(74, 36);
 			this.TxtValorOne.TabIndex = 6;
 			// 
-			// Dgv_Dados
-			// 
-			this.Dgv_Dados.AllowUserToAddRows = false;
-			this.Dgv_Dados.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Empty;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Empty;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Empty;
-			this.Dgv_Dados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-			this.Dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.Dgv_Dados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-			this.Dgv_Dados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.Dgv_Dados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-			this.Dgv_Dados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SlateBlue;
-			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Gainsboro;
-			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.Dgv_Dados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-			this.Dgv_Dados.ColumnHeadersHeight = 25;
-			this.Dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			this.Dgv_Dados.Cursor = System.Windows.Forms.Cursors.Hand;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.Dgv_Dados.DefaultCellStyle = dataGridViewCellStyle8;
-			this.Dgv_Dados.EnableHeadersVisualStyles = false;
-			this.Dgv_Dados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-			this.Dgv_Dados.Location = new System.Drawing.Point(12, 12);
-			this.Dgv_Dados.Name = "Dgv_Dados";
-			this.Dgv_Dados.ReadOnly = true;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.WhiteSmoke;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.Dgv_Dados.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-			this.Dgv_Dados.RowHeadersVisible = false;
-			dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-			dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle10.ForeColor = System.Drawing.Color.WhiteSmoke;
-			dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-			dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-			this.Dgv_Dados.RowsDefaultCellStyle = dataGridViewCellStyle10;
-			this.Dgv_Dados.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-			this.Dgv_Dados.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Dgv_Dados.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.Dgv_Dados.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(65)))), ((int)(((byte)(66)))));
-			this.Dgv_Dados.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-			this.Dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dgv_Dados.Size = new System.Drawing.Size(978, 630);
-			this.Dgv_Dados.TabIndex = 7;
-			this.Dgv_Dados.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-			this.Dgv_Dados.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-			this.Dgv_Dados.ThemeStyle.AlternatingRowsStyle.Font = null;
-			this.Dgv_Dados.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-			this.Dgv_Dados.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-			this.Dgv_Dados.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-			this.Dgv_Dados.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-			this.Dgv_Dados.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-			this.Dgv_Dados.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-			this.Dgv_Dados.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			this.Dgv_Dados.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-			this.Dgv_Dados.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-			this.Dgv_Dados.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			this.Dgv_Dados.ThemeStyle.HeaderStyle.Height = 25;
-			this.Dgv_Dados.ThemeStyle.ReadOnly = true;
-			this.Dgv_Dados.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-			this.Dgv_Dados.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-			this.Dgv_Dados.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-			this.Dgv_Dados.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.Dgv_Dados.ThemeStyle.RowsStyle.Height = 22;
-			this.Dgv_Dados.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			this.Dgv_Dados.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			// 
 			// guna2Elipse2
 			// 
-			this.guna2Elipse2.TargetControl = this.Dgv_Dados;
+			this.guna2Elipse2.TargetControl = this.List_view;
 			// 
 			// label1
 			// 
@@ -390,18 +302,54 @@
 			this.Lbl_totalResult.TabIndex = 8;
 			this.Lbl_totalResult.Text = "-";
 			// 
+			// guna2AnimateWindow1
+			// 
+			this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+			// 
+			// Btn_AllCriterial
+			// 
+			this.Btn_AllCriterial.BorderRadius = 6;
+			this.Btn_AllCriterial.CheckedState.Parent = this.Btn_AllCriterial;
+			this.Btn_AllCriterial.CustomImages.Parent = this.Btn_AllCriterial;
+			this.Btn_AllCriterial.FillColor = System.Drawing.Color.SlateBlue;
+			this.Btn_AllCriterial.Font = new System.Drawing.Font("Segoe UI", 11F);
+			this.Btn_AllCriterial.ForeColor = System.Drawing.Color.White;
+			this.Btn_AllCriterial.HoverState.Parent = this.Btn_AllCriterial;
+			this.Btn_AllCriterial.Location = new System.Drawing.Point(1001, 284);
+			this.Btn_AllCriterial.Name = "Btn_AllCriterial";
+			this.Btn_AllCriterial.ShadowDecoration.Parent = this.Btn_AllCriterial;
+			this.Btn_AllCriterial.Size = new System.Drawing.Size(125, 45);
+			this.Btn_AllCriterial.TabIndex = 9;
+			this.Btn_AllCriterial.Text = "All Criterial";
+			this.Btn_AllCriterial.Click += new System.EventHandler(this.Btn_AllCriterial_Click);
+			// 
+			// List_view
+			// 
+			this.List_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+			this.List_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.List_view.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.List_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.List_view.ForeColor = System.Drawing.Color.Gainsboro;
+			this.List_view.HideSelection = false;
+			this.List_view.Location = new System.Drawing.Point(8, 23);
+			this.List_view.Name = "List_view";
+			this.List_view.Size = new System.Drawing.Size(987, 619);
+			this.List_view.TabIndex = 10;
+			this.List_view.UseCompatibleStateImageBehavior = false;
+			// 
 			// FrmEmployes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
 			this.ClientSize = new System.Drawing.Size(1133, 713);
 			this.ControlBox = false;
+			this.Controls.Add(this.List_view);
+			this.Controls.Add(this.Btn_AllCriterial);
 			this.Controls.Add(this.Lbl_totalResult);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.Dgv_Dados);
 			this.Controls.Add(this.TxtValorOne);
 			this.Controls.Add(this.TxtValoeTwo);
 			this.Controls.Add(this.guna2ControlBox4);
@@ -416,7 +364,6 @@
 			this.Name = "FrmEmployes";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			((System.ComponentModel.ISupportInitialize)(this.Dgv_Dados)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -435,11 +382,13 @@
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 		private Guna.UI2.WinForms.Guna2TextBox TxtValoeTwo;
 		private Guna.UI2.WinForms.Guna2TextBox TxtValorOne;
-		private Guna.UI2.WinForms.Guna2DataGridView Dgv_Dados;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
 		private System.Windows.Forms.Label Lbl_totalResult;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
+		private Guna.UI2.WinForms.Guna2Button Btn_AllCriterial;
+		private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+		private System.Windows.Forms.ListView List_view;
 	}
 }

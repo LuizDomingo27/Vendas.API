@@ -14,21 +14,34 @@ public class EmployeRepository : IEmployeRepository
 
 	public async Task<List<Employes>> GetAllSales()
 	{
-		return await _context.Employes.ToListAsync();
+		return await _context.Employes.AsNoTracking().ToListAsync();
+		//return await _context.Employes.ToListAsync();
 	}
 
 	public async Task<List<Employes>> GetSalesHigherThen(int valueOne, int valueTwo)
 	{
-		return await _context.Employes.Where(v => v.Salario > valueOne && v.Salario < valueTwo).ToListAsync();
+		return await _context.Employes.AsNoTracking()
+																	.Where(v => v.Salario > valueOne && v.Salario < valueTwo)
+																	.ToListAsync();
 	}
 
 	public async Task<List<Employes>> GetCargo(string cargo)
 	{
-		return await _context.Employes.Where(c => c.Cargo!.StartsWith(cargo)).ToListAsync();
+		return await _context.Employes.AsNoTracking()
+																	.Where(c => c.Cargo!.StartsWith(cargo))
+																	.ToListAsync();
 	}
 
 	public async Task<List<Employes>> GetSalesByState(string state)
 	{
-		return await _context.Employes.Where(s => s.Estado!.Equals(state.Trim())).ToListAsync();
+		return await _context.Employes.AsNoTracking().Where(s => s.Estado!.Equals(state.Trim())).ToListAsync();
+	}
+
+	public async Task<List<Employes>> GetWithVariousCriteriau(string state, string cargo, int valueOne, int valueTwho)
+	{
+		return await _context.Employes.AsNoTracking()
+			.Where(s => s.Estado!.Equals(state.Trim()) && s.Cargo!
+			.StartsWith(cargo) && s.Salario > valueOne && s.Salario < valueTwho)
+			.ToListAsync();
 	}
 }

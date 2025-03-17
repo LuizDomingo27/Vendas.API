@@ -6,7 +6,7 @@
 		public string EstadoCivil { get; set; }
 		public string Escolaridade { get; set; }
 		public string Genero { get; set; }
-		public int Idde { get; set; }
+		public int Idade { get; set; }
 		public string Status { get; set; }
 		public string Cargo { get; set; }
 		public string Setor { get; set; }
