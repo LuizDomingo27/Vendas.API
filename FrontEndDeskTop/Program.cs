@@ -15,7 +15,7 @@ namespace FrontEndDeskTop
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FrmEmployes());
+			Application.Run(new FrmMain1());
 		}
 	}
 }

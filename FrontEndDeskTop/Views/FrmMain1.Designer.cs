@@ -38,26 +38,29 @@
 			// ProgresMain
 			// 
 			this.ProgresMain.Animated = true;
+			this.ProgresMain.AnimationSpeed = 0.7F;
 			this.ProgresMain.AutoScroll = true;
 			this.ProgresMain.BackColor = System.Drawing.Color.Transparent;
 			this.ProgresMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.ProgresMain.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.ProgresMain.FillColor = System.Drawing.Color.Transparent;
 			this.ProgresMain.FillThickness = 30;
 			this.ProgresMain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ProgresMain.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.ProgresMain.ImageSize = new System.Drawing.Size(150, 150);
 			this.ProgresMain.Location = new System.Drawing.Point(39, 12);
+			this.ProgresMain.Minimum = 0;
 			this.ProgresMain.Name = "ProgresMain";
-			this.ProgresMain.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-			this.ProgresMain.ProgressColor2 = System.Drawing.Color.DodgerBlue;
+			this.ProgresMain.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(148)))), ((int)(((byte)(245)))));
+			this.ProgresMain.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(250)))));
 			this.ProgresMain.ProgressStartCap = System.Drawing.Drawing2D.LineCap.Round;
 			this.ProgresMain.ProgressThickness = 30;
 			this.ProgresMain.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-			this.ProgresMain.ShadowDecoration.Parent = this.ProgresMain;
-			this.ProgresMain.ShowPercentage = true;
-			this.ProgresMain.Size = new System.Drawing.Size(257, 263);
+			this.ProgresMain.ShowText = true;
+			this.ProgresMain.Size = new System.Drawing.Size(263, 263);
 			this.ProgresMain.TabIndex = 0;
 			this.ProgresMain.UseTransparentBackground = true;
+			this.ProgresMain.Value = 1;
 			// 
 			// guna2Elipse1
 			// 
