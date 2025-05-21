@@ -27,10 +27,8 @@ public static class DependecyInjection
 	{
 		uint expirtationTimeOrDate = config.GetValue<uint>("Settings:Jwt:ExpirationTime");
 		string? secretKey = config.GetValue<string>("Settings:Jwt:SigningKey");
-		services.AddScoped<IGeneratorToken>
-			(
-				option => new JwtTokenGenerator(expirtationTimeOrDate, secretKey)
-			);
+
+		services.AddScoped<IGeneratorToken>(option => new JwtTokenGenerator(expirtationTimeOrDate, secretKey));
 	}
 
 	public static void AddRepository(IServiceCollection services)
@@ -40,8 +38,8 @@ public static class DependecyInjection
 
 	public static void AddSqlServer(IServiceCollection services, IConfiguration configuration)
 	{
-		services.AddDbContext<EmployesContext>(option =>
-			option.UseSqlServer(configuration.GetConnectionString("ConectSqlServer")));
+		services.AddDbContext<EmployesContext>(option => option.UseSqlServer(
+			configuration.GetConnectionString("ConectSqlServer")));
 	}
 
 	public static void AddUserLogin(IServiceCollection services)

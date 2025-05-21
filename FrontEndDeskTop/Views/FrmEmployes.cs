@@ -124,8 +124,8 @@ namespace FrontEndDeskTop.Views
 
 		private async Task GetAllCriterial()
 		{
-			if (CbbCargo.SelectedItem == null || CbbEstado.SelectedItem == null && TxtValoeTwo.Text == string.Empty
-				&& TxtValorOne.Text == string.Empty)
+			if (CbbCargo.SelectedItem == null || CbbEstado.SelectedItem == null || TxtValoeTwo.Text == string.Empty
+				|| TxtValorOne.Text == string.Empty)
 			{
 				MessageBox.Show("Preencha todos os campos para a pesquisa");
 				return;
