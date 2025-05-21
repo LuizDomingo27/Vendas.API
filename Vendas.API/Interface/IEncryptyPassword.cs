@@ -3,4 +3,5 @@
 public interface IEncryptyPassword
 {
 	public string Encrypty(string password);
+	public bool Verify(string password, string has);
 }

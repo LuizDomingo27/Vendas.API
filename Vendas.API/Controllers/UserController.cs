@@ -9,22 +9,36 @@ namespace Vendas.API.Controllers;
 [ApiController]
 public class UserController : ControllerBase
 {
-	[HttpPost("login")]
-	[ProducesResponseType(StatusCodes.Status200OK)]
-	[ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
-	[ProducesDefaultResponseType]
-	public async Task<ActionResult<LoginUser>> LoginUser([FromServices] IUserRepository iuser,
-		[FromBody] LoginUser user)
+	#region GetAll Users
+	[HttpGet]
+	[ProducesResponseType(typeof(List<RegisterUsers>), StatusCodes.Status200OK)]
+	public async Task<ActionResult<List<RegisterUsers>>> GetUsers([FromServices] IUserRepository user)
 	{
-		var userLogd = await iuser.Login(user);
-		return userLogd ? Ok("Usuário logado com sucesso") : BadRequest("Usuário ou senha inválidos");
+		List<RegisterUsers> result = await user.GetUsers();
+		return result;
+	}
+	#endregion
+
+	#region Login User
+
+	[HttpPost("login")]
+	[ProducesResponseType(typeof(ResponseUserRegister), StatusCodes.Status200OK)]
+	public async Task<ActionResult<bool>> LoginUser([FromServices] IUserRepository Iuser, [FromBody] LoginUser user)
+	{
+		bool userLogd = await Iuser.Login(user);
+		return userLogd;
 	}
 
-	[HttpPost("register")]
+	#endregion
+
+	#region Register User
+	[HttpPost]
 	[ProducesResponseType(typeof(ResponseUserRegister), StatusCodes.Status201Created)]
-	public async Task<IActionResult> RegisterUser([FromServices] IUserRepository register, [FromBody] RequesteRegisterUser user)
+	public async Task<ActionResult> RegisterUser([FromServices] IUserRepository register, [FromBody] RequesteRegisterUser user)
 	{
-		var model = await register.AddUser(user);
+		ResponseUserRegister model = await register.AddUser(user);
 		return Created(string.Empty, model);
 	}
+
+	#endregion
 }
