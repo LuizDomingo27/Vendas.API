@@ -10,10 +10,8 @@ namespace Vendas.API.Controllers;
 public class SalesController : Controller
 {
   private readonly IEmployeRepository _employeRepository;
-  public SalesController(IEmployeRepository employeRepository)
-  {
-    _employeRepository = employeRepository;
-  }
+  public SalesController(IEmployeRepository employeRepository) => _employeRepository = employeRepository;
+
 
   [HttpGet("{valueOne}/{valueTwo}")]
   public async Task<ActionResult<List<Employes>>> GetEmployeHigh(int valueOne, int valueTwo)
@@ -22,6 +20,7 @@ public class SalesController : Controller
     return employesSalary;
   }
 
+
   [HttpGet]
   public async Task<ActionResult<List<Employes>>> GetAllEmployes()
   {
@@ -29,12 +28,14 @@ public class SalesController : Controller
     return employes;
   }
 
+
   [HttpGet("{Estado:alpha}")]
   public async Task<ActionResult<List<Employes>>> GetEstate(string Estado)
   {
     List<Employes> emp = await _employeRepository.GetSalesByState(Estado);
     return emp;
   }
+
 
   [HttpGet("{estado}/{cargo}/{valueOne}/{valueTwo}")]
   public async Task<ActionResult<List<Employes>>> GetAllCriterial(string estado, string cargo, int valueOne, int valueTwo)
